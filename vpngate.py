@@ -305,7 +305,7 @@ class Config:
         edge_hosts = parse_edge_hosts(static_raw) if static_raw else []
         if not edge_hosts:
             edge_hosts = [h for h in (normalize_endpoint(x) for x in DEFAULT_EDGE_HOSTS) if h]
-
+      NODES_URL = os.environ.get("NODES_URL", "https://wuxifenghuang.github.io/gate/nodes.txt")  
         return cls(
             vpngate_api=os.environ.get("VPNGATE_API", DEFAULT_VPNGATE_API),
             vpngate_mirror=os.environ.get("VPNGATE_MIRROR", DEFAULT_VPNGATE_MIRROR),
